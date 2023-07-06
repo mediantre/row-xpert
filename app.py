@@ -1,37 +1,16 @@
-from dataclasses import dataclass
+from lib.data import * # Import data.py
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 
-@dataclass
-class Rest:
-    type: str = "rest" # rest or paddle
-    value: int
-    value_type: str = "time" # time, distance, or strokes
+# Create a Flask app
+app = Flask(__name__)
 
-@dataclass
-class Pace:
-    type: str = "2k" # Relative to 2k (-1 = 2k pace -1), watts, or split (split is in seconds)
-    value: int
-    stroke_rate: int = None # If stroke rate is not specified, it is up to the user to set it
+# empty page with hello world
 
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
-@dataclass
-class Interval:
-    type: str # distance, time, or strokes
-    value: int
-    pace: Pace = None
-    rest: Rest = None
-
-@dataclass
-class Workout:
-    title: str
-    description: str
-    heart_rate_zone: str
-    total_time: int
-    requires_warmup: bool
-    intervals: list[Interval]
-    interval_count: int = 1 # If intervals are the same, don't repeat them, just increase the count
-
-
-# Main
+# Run flask app
 if __name__ == "__main__":
-    print("Hello World")
-
+    app.run(debug=True)
+    
