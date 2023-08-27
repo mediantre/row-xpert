@@ -1,0 +1,43 @@
+{
+    "workout_1": [
+        {
+            "type": "distance",
+            "value": 10000,
+            "rest": {
+            "type": "time_off",
+            "value": 120
+            },
+            "pace": null,
+            "heart_rate": null,
+            "interval": null
+        }
+    ],
+    "workout_2": [
+        {
+            "type": "repeat",
+            "value": 6,
+            "interval": {
+                "type": "time",
+                "value": 120,
+                "rest": {
+                    "type": "time_off",
+                    "value": 60
+                },
+                "pace": {
+                    "split_min": -3,
+                    "split_max": -2,
+                    "spm_min": 28,
+                    "spm_max": 32,
+                    "effort": 8
+                },
+                "heart_rate": {
+                    "min_hr_percent": 60,
+                    "max_hr_percent": 80,
+                    "zone": 2
+                }
+            }
+        }
+    ]
+}
+
+  
