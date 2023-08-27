@@ -1,8 +1,9 @@
 # row-xpert
-Erg workout generator
+##Erg workout generator
 
 
-A rowing Interval object is in the following format
+### Interval object
+- A rowing Interval object is in the following format: 
 ```
 type: 'time', 'distance', 'strokes', 'repeat' (for intervals)
 value: (int) (time in seconds, distance in meters, strokes in strokes, repeat in number of times)
@@ -21,7 +22,6 @@ heart_rate (optional): A heart rate to hold for the interval
     - max_hr_percent (optional): (int) (maximum heart rate percentage)
     - zone (optional): (int) (heart rate zone, 0-5) (0 = UT3, 1 = UT2, 2 = UT1, 3 = AT, 4 = TR, 5 = AN)
 ```
-
 
 Note: the only required fields are 'type', 'value', and interval if type is repeat
 
@@ -71,4 +71,14 @@ Example of a Interval object using 'repeat'
 }
 ```
 
+[The Interval Schema](interval_schema.json) contains all the possible fields for an Interval object.
+
+You can validate your Interval object using the [Interval Schema](workout_schema.json) with the following command:
+
+```bash
+$ npm run validate -- --interval <path to your interval object>
+```
+
+### Workout object
 You can now combine intervals into a Workout object, which is just an array of intervals. Simple!
+
