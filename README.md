@@ -31,54 +31,44 @@ Example of a valid Interval:
 
 ```json
 {
-    type: 'time',
-    value: 120,
-    rest: {
-        type: 'time_off',
-        value: 60
+    "type": "distance",
+    "value": 500,
+    "rest": {
+    "type": "time_off",
+    "value": 120
     },
-    pace: {
-        split: 1,
-        spm_min: 20,
-        spm_max: 20,
-        effort: 5
-    },
-    heart_rate: {
-        min_hr_percent: 60,
-        max_hr_percent: 80,
-        zone: 2
-    }
+    "pace": null,
+    "heart_rate": null,
+    "interval": null
 }
 ```
 Example of a Interval object using 'repeat'
 
  ```json 
 {
-    type: 'repeat',
-    value: 6,
-    interval: {
-        type: 'repeat',
-        value: 2,
-        interval: {
-            type: 'time',
-            value: 120,
-            rest: {
-                type: 'time_off',
-                value: 60
-            },
-            pace: {
-                split_min: -3,
-                split_max: -2,
-                spm_min: 28,
-                spm_max: 32,
-                effort: 8
-            },
-            heart_rate: {
-                min_hr_percent: 60,
-                max_hr_percent: 80,
-                zone: 2
-            }
+    "type": "repeat",
+    "value": 6,
+    "interval": {
+        "type": "time",
+        "value": 120,
+        "rest": {
+            "type": "time_off",
+            "value": 60
+        },
+        "pace": {
+            "split_min": -3,
+            "split_max": -2,
+            "spm_min": 28,
+            "spm_max": 32,
+            "effort": 8
+        },
+        "heart_rate": {
+            "min_hr_percent": 60,
+            "max_hr_percent": 80,
+            "zone": 2
         }
     }
 }
 ```
+
+You can now combine intervals into a Workout object, which is just an array of intervals. Simple!

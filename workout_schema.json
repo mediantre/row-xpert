@@ -2,197 +2,195 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "properties": {
-      "type": {
-        "type": "string",
-        "enum": ["time", "distance", "strokes", "repeat"]
-      },
-      "value": {
-        "type": "integer"
-      },
-      "interval": {
-        "type": "object",
-        "properties": {
-          "type": {
+        "type": {
             "type": "string",
             "enum": ["time", "distance", "strokes", "repeat"]
-          },
-          "value": {
+        },
+        "value": {
             "type": "integer"
-          },
-          "rest": {
-            "type": "object",
+        },
+        "interval": {
+            "type": ["object", "null"],
             "properties": {
-              "type": {
-                "type": "string",
-                "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
-              },
-              "value": {
-                "type": "integer"
-              }
+                "type": {
+                    "type": "string",
+                    "enum": ["time", "distance", "strokes", "repeat"]
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "rest": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
+                        },
+                        "value": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "pace": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "split_min": {
+                            "type": "integer"
+                        },
+                        "split_max": {
+                            "type": "integer"
+                        },
+                        "spm_min": {
+                            "type": "integer"
+                        },
+                        "spm_max": {
+                            "type": "integer"
+                        },
+                        "effort": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "heart_rate": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "min_hr_percent": {
+                            "type": "integer"
+                        },
+                        "max_hr_percent": {
+                            "type": "integer"
+                        },
+                        "zone": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "interval": {
+                    "$ref": "#/definitions/interval"
+                }
             },
             "additionalProperties": false
-          },
-          "pace": {
-            "type": "object",
+        },
+        "rest": {
+            "type": ["object", "null"],
             "properties": {
-              "split_min": {
-                "type": "integer"
-              },
-              "split_max": {
-                "type": "integer"
-              },
-              "spm_min": {
-                "type": "integer"
-              },
-              "spm_max": {
-                "type": "integer"
-              },
-              "effort": {
-                "type": "integer"
-              }
+                "type": {
+                    "type": "string",
+                    "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
+                },
+                "value": {
+                    "type": "integer"
+                }
             },
             "additionalProperties": false
-          },
-          "heart_rate": {
-            "type": "object",
+        },
+        "pace": {
+            "type": ["object", "null"],
             "properties": {
-              "min_hr_percent": {
-                "type": "integer"
-              },
-              "max_hr_percent": {
-                "type": "integer"
-              },
-              "zone": {
-                "type": "integer"
-              }
+                "split_min": {
+                    "type": "integer"
+                },
+                "split_max": {
+                    "type": "integer"
+                },
+                "spm_min": {
+                    "type": "integer"
+                },
+                "spm_max": {
+                    "type": "integer"
+                },
+                "effort": {
+                    "type": "integer"
+                }
             },
             "additionalProperties": false
-          },
-          "interval": {
-            "$ref": "#/definitions/interval"
-          }
         },
-        "required": ["type", "value"],
-        "additionalProperties": false
-      },
-      "rest": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
-          },
-          "value": {
-            "type": "integer"
-          }
-        },
-        "additionalProperties": false
-      },
-      "pace": {
-        "type": "object",
-        "properties": {
-          "split_min": {
-            "type": "integer"
-          },
-          "split_max": {
-            "type": "integer"
-          },
-          "spm_min": {
-            "type": "integer"
-          },
-          "spm_max": {
-            "type": "integer"
-          },
-          "effort": {
-            "type": "integer"
-          }
-        },
-        "additionalProperties": false
-      },
-      "heart_rate": {
-        "type": "object",
-        "properties": {
-          "min_hr_percent": {
-            "type": "integer"
-          },
-          "max_hr_percent": {
-            "type": "integer"
-          },
-          "zone": {
-            "type": "integer"
-          }
-        },
-        "additionalProperties": false
-      }
+        "heart_rate": {
+            "type": ["object", "null"],
+            "properties": {
+                "min_hr_percent": {
+                    "type": "integer"
+                },
+                "max_hr_percent": {
+                    "type": "integer"
+                },
+                "zone": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        }
     },
     "required": ["type", "value"],
     "definitions": {
-      "interval": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": ["time", "distance", "strokes"]
-          },
-          "value": {
-            "type": "integer"
-          },
-          "rest": {
+        "interval": {
             "type": "object",
             "properties": {
-              "type": {
-                "type": "string",
-                "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
-              },
-              "value": {
-                "type": "integer"
-              }
+                "type": {
+                    "type": "string",
+                    "enum": ["time", "distance", "strokes"]
+                },
+                "value": {
+                    "type": "integer"
+                },
+                "rest": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "type": {
+                            "type": "string",
+                            "enum": ["time_off", "time_paddle", "distance_paddle", "strokes_paddle"]
+                        },
+                        "value": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "pace": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "split_min": {
+                            "type": "integer"
+                        },
+                        "split_max": {
+                            "type": "integer"
+                        },
+                        "spm_min": {
+                            "type": "integer"
+                        },
+                        "spm_max": {
+                            "type": "integer"
+                        },
+                        "effort": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "heart_rate": {
+                    "type": ["object", "null"],
+                    "properties": {
+                        "min_hr_percent": {
+                            "type": "integer"
+                        },
+                        "max_hr_percent": {
+                            "type": "integer"
+                        },
+                        "zone": {
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "interval": {
+                    "$ref": "#/definitions/interval"
+                }
             },
+            "required": ["type", "value"],
             "additionalProperties": false
-          },
-          "pace": {
-            "type": "object",
-            "properties": {
-              "split_min": {
-                "type": "integer"
-              },
-              "split_max": {
-                "type": "integer"
-              },
-              "spm_min": {
-                "type": "integer"
-              },
-              "spm_max": {
-                "type": "integer"
-              },
-              "effort": {
-                "type": "integer"
-              }
-            },
-            "additionalProperties": false
-          },
-          "heart_rate": {
-            "type": "object",
-            "properties": {
-              "min_hr_percent": {
-                "type": "integer"
-              },
-              "max_hr_percent": {
-                "type": "integer"
-              },
-              "zone": {
-                "type": "integer"
-              }
-            },
-            "additionalProperties": false
-          },
-          "interval": {
-            "$ref": "#/definitions/interval"
-          }
-        },
-        "required": ["type", "value"],
-        "additionalProperties": false
-      }
+        }
     }
-  }
-  
+}
