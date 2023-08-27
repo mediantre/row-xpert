@@ -34,8 +34,8 @@ Example of a valid Interval:
     "type": "distance",
     "value": 500,
     "rest": {
-    "type": "time_off",
-    "value": 120
+        "type": "time_off",
+        "value": 120
     },
     "pace": null,
     "heart_rate": null,
