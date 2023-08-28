@@ -98,9 +98,9 @@ def print_interval(interval_obj):
     print("Type:", interval_type)
 
     if interval_type in interval_type_mapping:
-        units, format_func = interval_type_mapping[interval_type]
-        if format_func:
-            value = format_func(value)
+        units, format_type = interval_type_mapping[interval_type]
+        if format_type:
+            value = format_type(value)
     else:
         units = ""
 
