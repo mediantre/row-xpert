@@ -37,6 +37,57 @@
                 }
             }
         }
+    ],
+    "workout_3": [
+        {
+            "type": "distance",
+            "value": 1000,
+            "rest": null,
+            "pace": {
+                "spm_min": 25,
+                "spm_max": 25
+            },
+            "heart_rate": null
+        },
+        {
+            "type": "distance",
+            "value": 1000,
+            "rest": null,
+            "pace": {
+                "spm_min": 22,
+                "spm_max": 22
+            }
+        },
+        {
+            "type": "distance",
+            "value": 1000,
+            "rest": null,
+            "pace": {
+                "spm_min": 25,
+                "spm_max": 25
+            },
+            "heart_rate": null
+        },
+        {
+            "type": "distance",
+            "value": 1000,
+            "rest": null,
+            "pace": {
+                "spm_min": 28,
+                "spm_max": 28
+            },
+            "heart_rate": null
+        },
+        {
+            "type": "distance",
+            "value": 1000,
+            "rest": null,
+            "pace": {
+                "spm_min": 25,
+                "spm_max": 25
+            },
+            "heart_rate": null
+        }
     ]
 }
 
