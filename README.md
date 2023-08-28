@@ -80,5 +80,60 @@ $ npm run validate -- --interval <path to your interval object>
 ```
 
 ### Workout object
-You can now combine intervals into a Workout object, which is just an array of intervals. Simple!
+You can now combine intervals into a Workout object, which is just an array of intervals, with metadata.  The Workout object is in the following format:
+
+```
+name (optional): (string) (name of the workout)
+description (optional): (string) (description of the workout)
+author (optional): (string) (author of the workout)
+type (optional): (string) (type of workout, e.g. 'steady state', 'intervals', 'test')
+intervals (required): (array) (array of Interval objects)
+```
+
+Example of a valid Workout object:
+
+```json
+{
+    "name": "6x500m",
+    "description": "6x500m with 2 minutes rest",
+    "author": "Row Xpert",
+    "type": "intervals",
+    "intervals": [
+        {
+            "type": "repeat",
+            "value": 6,
+            "interval": {
+                "type": "distance",
+                "value": 500,
+                "rest": {
+                    "type": "time_off",
+                    "value": 120
+                },
+                "pace": null,
+                "heart_rate": null,
+                "interval": null
+            }
+        }
+    ]
+}
+```
+
+## Workout generator
+
+We use a GAN to generate workouts.  The GAN is trained on a dataset of workouts, which are stored in the [workouts](workouts) directory.  The workouts are stored in JSON format, and are validated using the [Workout Schema](workout_schema.json).  You can validate your workout using the [Workout Schema](workout_schema.json) with the following command:
+
+```bash
+$ npm run validate -- --workout <path to your workout>
+```
+
+### Usage
+
+To generate a workout, run the following command:
+
+```bash
+pip install -r requirements.txt
+python generate.py
+```
+
+This will generate a workout and save it to the [generated_workouts](generated_workouts) directory.  The workout will be saved in JSON format, and will be validated using the [Workout Schema](workout_schema.json).
 
