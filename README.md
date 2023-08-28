@@ -1,5 +1,5 @@
 # row-xpert
-##Erg workout generator
+## Erg workout generator
 
 
 ### Interval object
