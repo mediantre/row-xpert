@@ -62,6 +62,7 @@ def print_heart_rate_info(heart_rate_info):
         print(f"Heart Rate Zone: {zone_text}")
 
 def print_rest_info(rest):
+    """ Print rest information from a JSON object in a human-readable format """
     rest_type = rest.get("type", None)
     rest_value = rest.get("value", None)
 
