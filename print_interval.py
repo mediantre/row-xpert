@@ -79,6 +79,8 @@ def print_rest_info(rest):
 
 
 def print_interval(interval_obj):
+    """ Print interval information from a JSON object in a human-readable format """
+
     if not interval_obj:
         return
     
