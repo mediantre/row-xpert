@@ -111,7 +111,6 @@ Example of a valid Workout object:
                 },
                 "pace": null,
                 "heart_rate": null,
-                "interval": null
             }
         }
     ]
