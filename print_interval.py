@@ -152,6 +152,5 @@ interval_json = {
         }
     }
 }
-
 # Call the function to print interval values
 print_interval(interval_json)
